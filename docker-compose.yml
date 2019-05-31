@@ -13,5 +13,3 @@ services:
       - PORT=3000
       - MURMUR_HOST=mumble
       - MURMUR_PORT=6502
-    networks:
-      - murmur
