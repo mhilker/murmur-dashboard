@@ -1,12 +1,13 @@
 mixin leaf(id, level)
-  - var channel = channels[id]
-  li.list-group-item.d-flex.justify-content-between.align-items-center
-    span(class='ml-' + level * 2)= channel.name
-    if channel.users > 0
-      span.badge.badge-primary.badge-pill= channel.users
-    else
-      span.badge.badge-secondary.badge-pill= 0
-  +tree(channel.id, level + 1)
+  if channels[id]
+    - var channel = channels[id]
+    li.list-group-item.d-flex.justify-content-between.align-items-center
+      span(class='ml-' + level * 2)= channel.name
+      if channel.users > 0
+        span.badge.badge-primary.badge-pill= channel.users
+      else
+        span.badge.badge-secondary.badge-pill= 0
+    +tree(channel.id, level + 1)
 
 mixin tree(id, level)
   if tree[id]
@@ -18,6 +19,7 @@ html(lang='en')
   head
     title Murmur
     link(href='/bootstrap.min.css', rel='stylesheet')
+    meta(name='viewport', content='width=device-width, initial-scale=1.0')
   body
     .container
       .row
