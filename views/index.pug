@@ -1,0 +1,26 @@
+mixin leaf(id, level)
+  - var channel = channels[id]
+  li.list-group-item.d-flex.justify-content-between.align-items-center
+    span(class='ml-' + level * 2)= channel.name
+    if channel.users > 0
+      span.badge.badge-primary.badge-pill= channel.users
+    else
+      span.badge.badge-secondary.badge-pill= 0
+  +tree(channel.id, level + 1)
+
+mixin tree(id, level)
+  if tree[id]
+    each channelId in tree[id]
+      +leaf(channelId, level)
+
+doctype html
+html(lang='en')
+  head
+    title Murmur
+    link(href='/bootstrap.min.css', rel='stylesheet')
+  body
+    .container
+      .row
+        .col-12
+          ul.list-group.mt-3.mb-3
+            +tree('-1', 0)
