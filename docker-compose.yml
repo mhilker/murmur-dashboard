@@ -13,10 +13,5 @@ services:
       - PORT=3000
       - MURMUR_HOST=mumble
       - MURMUR_PORT=6502
-      - MURMUR_SECRET=1234
     networks:
       - murmur
-
-networks:
-  murmur:
-    external: true
