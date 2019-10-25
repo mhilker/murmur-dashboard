@@ -3,7 +3,7 @@ version: '3.7'
 services:
 
   node:
-    image: mhilker/murmur-dashboard
+    image: mhilker/murmur-dashboard:1.0.0
     build:
       context: .
       dockerfile: Dockerfile
