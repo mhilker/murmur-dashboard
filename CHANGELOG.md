@@ -12,7 +12,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Added
 - Added simple error handling in `Index.js`
 ### Changed
-- Updated docker-image version to node 12.13.0
+- Updated docker image version to node 12.13.0
 
 ## [0.1.0] - 2018-05-31
 ### Added
