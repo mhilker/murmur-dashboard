@@ -4,12 +4,13 @@ const dotenv = require('dotenv');
 const index = require('./src/Index');
 
 dotenv.config();
+const port = 3000;
 
 app.use(express.static('public'));
 app.get('/', index);
 app.set('views', './views');
 app.set('view engine', 'pug');
 
-app.listen(process.env.PORT, function () {
-    console.log('Listening on port ' + process.env.PORT);
+app.listen(port, () => {
+    console.log('Listening on port ' + port);
 });
