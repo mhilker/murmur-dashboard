@@ -37,7 +37,7 @@ async function getUsers(serverId) {
     }
 
     const users = await server.getUsers();
-    return Array.from(users.values()).map(c => ({
+    return Array.from(users.values()).map((c) => ({
         id: c.userid,
         name: c.name,
         channel: c.channel,
@@ -56,7 +56,7 @@ async function getChannels(serverId) {
     }
 
     const channels = await server.getChannels();
-    return Array.from(channels.values()).map(c => ({
+    return Array.from(channels.values()).map((c) => ({
         id: c.id,
         name: c.name,
         parent: c.parent,
